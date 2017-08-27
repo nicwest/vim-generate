@@ -5,10 +5,7 @@ let s:datetime = s:scope.vars('autoload/generate/datetime.vim')
 
 " patch vital lib for test consistancy
 function! s:fake_now(...) abort
-  let now = s:datetime.DateTime.from_unix_time(1503864575)
-  if a:0
-    let now = now.to(s:timezone(a:1))
-  endif
+  let now = s:datetime.DateTime.from_unix_time(1503864575, "+0300")
   return now
 endfunction
 
@@ -22,6 +19,6 @@ function! s:suite.after() abort
 endfunction
 
 function! s:suite.iso8601() abort
-  call s:assert.equals(generate#datetime#iso8601(), "2017-08-27T21:09:35+0100")
+  call s:assert.equals(generate#datetime#iso8601(), "2017-08-27T23:09:35+0300")
 endfunction
 
