@@ -1,0 +1,13 @@
+language: viml
+
+install:
+    - sudo apt-get update -q
+    - sudo apt-get install vim-gtk
+
+before_script:
+    - vim --version
+    - make init
+
+script:
+    - make test
+    - make lint
