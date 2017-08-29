@@ -75,12 +75,6 @@ else
   function! s:sign_extension(n) abort
     return a:n
   endfunction
-  function! s:lshift32(a, n) abort
-    return s:lshift(a:a, a:n)
-  endfunction
-  function! s:rshift32(a, n) abort
-    return s:rshift(a:a, a:n)
-  endfunction
 endif
 
 
