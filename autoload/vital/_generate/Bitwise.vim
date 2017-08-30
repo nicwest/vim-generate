@@ -72,6 +72,12 @@ if has('num64')
     return s:rshift(and(a:a, 0xFFFFFFFF), and(a:n, s:mask32))
   endfunction
 else
+  function! s:lshift32(a, n) abort
+    return s:lshift(a:a, a:n)
+  endfunction
+  function! s:rshift32(a, n) abort
+    return s:rshift(a:a, a:n)
+  endfunction
   function! s:sign_extension(n) abort
     return a:n
   endfunction
