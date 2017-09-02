@@ -55,6 +55,10 @@ function! s:username(first, last) abort
   return tolower(printf('%s_%s', a:first, a:last))
 endfunction
 
+function! s:email(stub, domain) abort
+  return printf('%s@%s', a:stub, a:domain)
+endfunction
+
 " Library Interface: {{{1
 function! generate#names#first() abort
   return s:Random.sample(s:first)
@@ -82,6 +86,11 @@ endfunction
 
 function! generate#names#user() abort
   return s:username(generate#names#first(), generate#names#last())
+endfunction
+
+function! generate#names#email() abort
+  let l:stub = s:stub(generate#names#first(), generate#names#last())
+  return s:email(l:stub, generate#inet#domain())
 endfunction
 
 " Teardown:{{{1

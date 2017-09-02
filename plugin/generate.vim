@@ -28,6 +28,8 @@ function! s:gen_name(type) abort
     let l:thing = generate#names#stub()
   elseif a:type == "user"
     let l:thing = generate#names#user()
+  elseif a:type == "email"
+    let l:thing = generate#names#email()
   else
     let l:thing = generate#names#full()
   endif
@@ -44,6 +46,17 @@ function! s:gen_date_time(...) abort
   call s:generate(l:thing)
 endfunction
 
+function! s:gen_inet(type) abort
+  if a:type == 'ipv4'
+    let l:thing = generate#inet#ipv4()
+  elseif a:type == 'ipv6'
+    let l:thing = generate#inet#ipv6()
+  else
+    let l:thing = generate#inet#domain()
+  endif
+  call s:generate(l:thing)
+endfunction
+
 " Maps: {{{1
 imap <Plug>GenFirstName <C-R>=generate#names#first()<CR>
 imap <Plug>GenFirstMaleName <C-R>=generate#names#first_male()<CR>
@@ -52,6 +65,11 @@ imap <Plug>GenLastName <C-R>=generate#names#last()<CR>
 imap <Plug>GenFullName <C-R>=generate#names#full()<CR>
 imap <Plug>GenStubName <C-R>=generate#names#stub()<CR>
 imap <Plug>GenUserName <C-R>=generate#names#user()<CR>
+imap <Plug>GenEmail <C-R>=generate#names#email()<CR>
+
+imap <Plug>GenDomain <C-R>=generate#inet#domain()<CR>
+imap <Plug>GenIPV4 <C-R>=generate#inet#ipv4()<CR>
+imap <Plug>GenIPV6 <C-R>=generate#inet#ipv6()<CR>
 
 imap <Plug>GenUUID4 <C-R>=generate#uuid#v4()<CR>
 
@@ -61,6 +79,7 @@ imap <Plug>GenIso8601DateTime <C-R>=generate#datetime#iso8601()<CR>
 command! -nargs=* -bar GenName call s:gen_name(<q-args>)
 command! -nargs=* -bar GenUUID call s:gen_uuid(<q-args>)
 command! -nargs=* -bar GenDateTime call s:gen_date_time(<q-args>)
+command! -nargs=* -bar GenInet call s:gen_inet(<q-args>)
 
 
 " Teardown: {{{1

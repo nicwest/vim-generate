@@ -51,3 +51,23 @@ function! s:suite.gen_name_user() abort
   GenName user
   call s:assert.equal(getline('.'), 'tamela_mcgray')
 endfunction
+
+function! s:suite.gen_inet() abort
+  GenInet
+  call s:assert.equal(getline('.'), 'radiantoyster.net')
+endfunction
+
+function! s:suite.gen_inet_domain() abort
+  GenInet domain
+  call s:assert.equal(getline('.'), 'radiantoyster.net')
+endfunction
+
+function! s:suite.gen_inet_ipv4() abort
+  GenInet ipv4
+  call s:assert.equal(getline('.'), '161.17.88.77')
+endfunction
+
+function! s:suite.gen_inet_ipv6() abort
+  GenInet ipv6
+  call s:assert.equal(getline('.'), 'a111:584d:438f:c09d:fd42:f2f7:26e0:49b5')
+endfunction

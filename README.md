@@ -21,6 +21,12 @@ Usage
 :GenName last          " a last name (e.g. Flintstone)
 :GenName stub          " a shortened lower case name (e.g. f.flinstone)
 :GenName user          " a lower case username (e.g. fred_flintstone)
+:GenName email         " a lower case username (e.g.  f.flintstone@rockslateandgravel.com)
+
+:GenInet               " a domain name (e.g. rockslateandgravel.com)
+:GenInet domain
+:GenInet ipv4          " an ipv4 address (e.g. 125.54.120.71)
+:GenInet ipv6          " an ipv6 address (e.g. 9dbc:aef0:8ba4:6416:3fea:2e44:fed7:3215)
 
 " UUIDs:
 :GenUUID               " a UUID (e.g. 13d9f2aa-76b7-4a51-8c89-f755d4e8f470)
@@ -43,6 +49,10 @@ imap <C-g>nl <Plug>GenLastName
 imap <C-g>nn <Plug>GenFullName
 imap <C-g>ns <Plug>GenStubName
 imap <C-g>nu <Plug>GenUserName
+imap <C-G>em <Plug>GenEmail
+imap <C-G>id <Plug>GenDomain
+imap <C-G>ip <Plug>GenIPV4
+imap <C-G>ix <Plug>GenIPV6
 imap <C-g>uu <Plug>GenUUID4
 imap <C-g>dt <Plug>GenIso8601DateTime
 
@@ -53,7 +63,11 @@ nnoremap gennl :GenName last<CR>
 nnoremap gennn :GenName full<CR>
 nnoremap genns :GenName stub<CR>
 nnoremap gennu :GenName user<CR>
-nnoremap genuu :GenUUID<CR>
+nnoremap genem :GenName email<CR>
+nnoremap genid :GenInet domain<CR>
+nnoremap genip :GenInet ipv4<CR>
+nnoremap genix :GenInet ipv6<CR>
+nnoremap genuu :GenInet UUID<CR>
 nnoremap gendt :GenDateTime<CR>
 ```
 

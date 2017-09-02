@@ -2,10 +2,12 @@ let s:suite = themis#suite('names')
 let s:assert = themis#helper('assert')
 let s:scope = themis#helper('scope')
 let s:names = s:scope.vars('autoload/generate/names.vim')
+let s:inet = s:scope.vars('autoload/generate/names.vim')
 
 
 function! s:suite.before_each() abort
   call s:names.Random.seed(1) 
+  call s:inet.Random.seed(1) 
 endfunction
 
 function! s:suite.first() abort
@@ -48,4 +50,10 @@ function! s:suite.user() abort
   call s:assert.equals(generate#names#user(), "tamela_mcgray")
   call s:assert.equals(generate#names#user(), "delbert_atienza")
   call s:assert.equals(generate#names#user(), "cole_clement")
+endfunction
+
+function! s:suite.email() abort
+  call s:assert.equals(generate#names#email(), 't.mcgray@hairyswift.net')
+  call s:assert.equals(generate#names#email(), 'c.arviso@quirkytoad.net')
+  call s:assert.equals(generate#names#email(), 't.duford@capedtiger.net')
 endfunction
