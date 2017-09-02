@@ -12,7 +12,9 @@ set cpo&vim
 
 " Private Interface: {{{1
 function! s:generate(t) abort
-  if a:t == "first name"
+  if a:t == "name" || a:t == "full name"
+    let l:thing = generate#names#full()
+  elseif a:t == "first name"
     let l:thing = generate#names#first()
   elseif a:t == "first male name"
     let l:thing = generate#names#first_male()
@@ -26,7 +28,7 @@ function! s:generate(t) abort
     let l:thing = generate#names#user()
   elseif a:t  == "email"
     let l:thing = generate#names#email()
-  elseif a:t == 'uuid'
+  elseif a:t == 'uuid' || a:t == 'uuid4'
     let l:thing = generate#uuid#v4()
   elseif a:t == 'datetime'
     let l:thing = generate#datetime#iso8601()
