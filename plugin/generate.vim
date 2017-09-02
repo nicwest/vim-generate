@@ -11,51 +11,37 @@ set cpo&vim
 "let g:loaded_generate = 1
 
 " Private Interface: {{{1
-function! s:generate(thing) abort
-  execute "norm! i" . a:thing
-endfunction
-
-function! s:gen_name(type) abort
-  if a:type == "first"
+function! s:generate(t) abort
+  if a:t == "first name"
     let l:thing = generate#names#first()
-  elseif a:type == "first male"
+  elseif a:t == "first male name"
     let l:thing = generate#names#first_male()
-  elseif a:type == "first female"
+  elseif a:t == "first female name"
     let l:thing = generate#names#first_female()
-  elseif a:type == "last"
+  elseif a:t == "last name"
     let l:thing = generate#names#last()
-  elseif a:type == "stub"
+  elseif a:t == "stub name"
     let l:thing = generate#names#stub()
-  elseif a:type == "user"
+  elseif a:t == "user"
     let l:thing = generate#names#user()
-  elseif a:type == "email"
+  elseif a:t  == "email"
     let l:thing = generate#names#email()
-  else
-    let l:thing = generate#names#full()
-  endif
-  call s:generate(l:thing)
-endfunction
-
-function! s:gen_uuid(...) abort
-  let l:thing = generate#uuid#v4()
-  call s:generate(l:thing)
-endfunction
-
-function! s:gen_date_time(...) abort
-  let l:thing = generate#datetime#iso8601()
-  call s:generate(l:thing)
-endfunction
-
-function! s:gen_inet(type) abort
-  if a:type == 'ipv4'
+  elseif a:t == 'uuid'
+    let l:thing = generate#uuid#v4()
+  elseif a:t == 'datetime'
+    let l:thing = generate#datetime#iso8601()
+  elseif a:t == 'ipv4'
     let l:thing = generate#inet#ipv4()
-  elseif a:type == 'ipv6'
+  elseif a:t == 'ipv6'
     let l:thing = generate#inet#ipv6()
-  else
+  elseif a:t == 'domain'
     let l:thing = generate#inet#domain()
+  else
+    let l:thing = generate#rage#random()
   endif
-  call s:generate(l:thing)
+  execute "norm! i" . l:thing
 endfunction
+
 
 " Maps: {{{1
 imap <Plug>GenFirstName <C-R>=generate#names#first()<CR>
@@ -76,10 +62,7 @@ imap <Plug>GenUUID4 <C-R>=generate#uuid#v4()<CR>
 imap <Plug>GenIso8601DateTime <C-R>=generate#datetime#iso8601()<CR>
 
 " Commands: {{{1
-command! -nargs=* -bar GenName call s:gen_name(<q-args>)
-command! -nargs=* -bar GenUUID call s:gen_uuid(<q-args>)
-command! -nargs=* -bar GenDateTime call s:gen_date_time(<q-args>)
-command! -nargs=* -bar GenInet call s:gen_inet(<q-args>)
+command! -nargs=* -bar Gen call s:generate(<q-args>)
 
 
 " Teardown: {{{1
