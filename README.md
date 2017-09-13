@@ -13,26 +13,26 @@ Usage
 " in normal mode all commands insert the thing before the cursor
 
 " Names:
-:GenName               " a full name (e.g. Fred Flintstone)
-:GenName full          
-:GenName first         " a first name (e.g. Fred)
-:GenName first male    " a male first name (e.g. Fred)
-:GenName first female  " a female first name (e.g. Wilma)
-:GenName last          " a last name (e.g. Flintstone)
-:GenName stub          " a shortened lower case name (e.g. f.flinstone)
-:GenName user          " a lower case username (e.g. fred_flintstone)
-:GenName email         " a lower case username (e.g.  f.flintstone@rockslateandgravel.com)
+:Gen full name            " a full name (e.g. Fred Flintstone)
+:Gen name                 " a full name (e.g. Fred Flintstone)
+:Gen first name           " a first name (e.g. Fred)
+:Gen first male name      " a male first name (e.g. Fred)
+:Gen first female name    " a female first name (e.g. Wilma)
+:Gen last name            " a last name (e.g. Flintstone)
+:Gen stub                 " a shortened lower case name (e.g. f.flinstone)
+:Gen user                 " a lower case username (e.g. fred_flintstone)
+:Gen email                " a lower case username (e.g. f.flintstone@rockslateandgravel.com)
 
-:GenInet               " a domain name (e.g. rockslateandgravel.com)
-:GenInet domain
-:GenInet ipv4          " an ipv4 address (e.g. 125.54.120.71)
-:GenInet ipv6          " an ipv6 address (e.g. 9dbc:aef0:8ba4:6416:3fea:2e44:fed7:3215)
+:Gen domain               " a domain name (e.g. rockslateandgravel.com)
+:Gen ipv4                 " an ipv4 address (e.g. 125.54.120.71)
+:Gen ipv6                 " an ipv6 address (e.g. 9dbc:aef0:8ba4:6416:3fea:2e44:fed7:3215)
 
 " UUIDs:
-:GenUUID               " a UUID (e.g. 13d9f2aa-76b7-4a51-8c89-f755d4e8f470)
+:Gen uuid                 " a UUID (e.g. 13d9f2aa-76b7-4a51-8c89-f755d4e8f470)
+:Gen uuid4                " a UUID v4 (e.g. 13d9f2aa-76b7-4a51-8c89-f755d4e8f470)
 
 " Dates and Times:
-:GenDateTime           " a ISO8601 Date Time (e.g. 2017-08-27T20:58:00+0100)
+:Gen datetime             " a ISO8601 Date Time (e.g. 2017-08-27T20:58:00+0100)
 
 ```
 
@@ -56,19 +56,19 @@ imap <C-G>ix <Plug>GenIPV6
 imap <C-g>uu <Plug>GenUUID4
 imap <C-g>dt <Plug>GenIso8601DateTime
 
-nnoremap gennf :GenName first<CR>
-nnoremap genny :GenName first male<CR>
-nnoremap gennx :GenName first female<CR>
-nnoremap gennl :GenName last<CR>
-nnoremap gennn :GenName full<CR>
-nnoremap genns :GenName stub<CR>
-nnoremap gennu :GenName user<CR>
-nnoremap genem :GenName email<CR>
-nnoremap genid :GenInet domain<CR>
-nnoremap genip :GenInet ipv4<CR>
-nnoremap genix :GenInet ipv6<CR>
-nnoremap genuu :GenInet UUID<CR>
-nnoremap gendt :GenDateTime<CR>
+nnoremap gennf :Gen first name<CR>
+nnoremap genny :Gen first male name<CR>
+nnoremap gennx :Gen first female name<CR>
+nnoremap gennl :Gen last name<CR>
+nnoremap gennn :Gen full name<CR>
+nnoremap genns :Gen stub<CR>
+nnoremap gennu :Gen user<CR>
+nnoremap genem :Gen email<CR>
+nnoremap genid :Gen domain<CR>
+nnoremap genip :Gen ipv4<CR>
+nnoremap genix :Gen ipv6<CR>
+nnoremap genuu :Gen uuid<CR>
+nnoremap gendt :Gen datetime<CR>
 ```
 
 Tests
