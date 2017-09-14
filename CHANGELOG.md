@@ -6,7 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Changed
-- consolidated genrator commands
+- changed `:Gen` command to `:Generate`. the `:Gen` abbreviation should still
+  be valid if there are no conflicts with other commands.
+- the `<Plug>GenXYZ` bindings have changed to `<Plug>GenerateXYZ` to keep it
+  consistent with the main command
+- consolidated generator commands
 
 ## [0.0.2] - 2017-09-02
 ### Added

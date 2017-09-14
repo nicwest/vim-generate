@@ -27,76 +27,76 @@ function! s:suite.after_each() abort
 endfunction
 
 function! s:suite.gen_name() abort
-  Gen name
+  Generate name
   call s:assert.equal(getline('.'), 'Tamela Mcgray')
 endfunction
 
 function! s:suite.gen_name_full() abort
-  Gen full name
+  Generate full name
   call s:assert.equal(getline('.'), 'Tamela Mcgray')
 endfunction
 
 function! s:suite.gen_name_first() abort
-  Gen first name
+  Generate first name
   call s:assert.equal(getline('.'), 'Tamela')
 endfunction
 
 function! s:suite.gen_name_first_male() abort
-  Gen first male name
+  Generate first male name
   call s:assert.equal(getline('.'), 'Kelley')
 endfunction
 
 function! s:suite.gen_name_first_female() abort
-  Gen first female name
+  Generate first female name
   call s:assert.equal(getline('.'), 'Charissa')
 endfunction
 
 function! s:suite.gen_name_last() abort
-  Gen last name
+  Generate last name
   call s:assert.equal(getline('.'), 'Livingston')
 endfunction
 
 function! s:suite.gen_name_last() abort
-  Gen stub name
+  Generate stub name
   call s:assert.equal(getline('.'), 't.mcgray')
 endfunction
 
 function! s:suite.gen_name_user() abort
-  Gen user
+  Generate user
   call s:assert.equal(getline('.'), 'tamela_mcgray')
 endfunction
 
 function! s:suite.gen_name_email() abort
-  Gen email
+  Generate email
   call s:assert.equal(getline('.'), 't.mcgray@hairyswift.net')
 endfunction
 
 function! s:suite.gen_inet_domain() abort
-  Gen domain
+  Generate domain
   call s:assert.equal(getline('.'), 'radiantoyster.net')
 endfunction
 
 function! s:suite.gen_inet_ipv4() abort
-  Gen ipv4
+  Generate ipv4
   call s:assert.equal(getline('.'), '161.17.88.77')
 endfunction
 
 function! s:suite.gen_inet_ipv6() abort
-  Gen ipv6
+  Generate ipv6
   call s:assert.equal(getline('.'), 'a111:584d:438f:c09d:fd42:f2f7:26e0:49b5')
 endfunction
 
 function! s:suite.gen_uuid() abort
-  Gen uuid
+  Generate uuid
   call s:assert.equal(getline('.'), 'a211584d-4390-419e-be42-f3f826e149b5')
 endfunction
 
 function! s:suite.gen_uuid_v4() abort
-  Gen uuid4
+  Generate uuid4
   call s:assert.equal(getline('.'), 'a211584d-4390-419e-be42-f3f826e149b5')
 endfunction
 
 function! s:suite.gen_iso8601_datetime() abort
-  Gen datetime
+  Generate datetime
   call s:assert.equal(getline('.'), '2017-08-27T23:09:35+0300')
 endfunction

@@ -42,33 +42,33 @@ Suggested Mappings
 generate doesn't bind anything by default. These are what I am currently using:
 
 ```viml
-imap <C-g>nf <Plug>GenFirstName
-imap <C-g>ny <Plug>GenFirstMaleName
-imap <C-g>nx <Plug>GenFirstFemaleName
-imap <C-g>nl <Plug>GenLastName
-imap <C-g>nn <Plug>GenFullName
-imap <C-g>ns <Plug>GenStubName
-imap <C-g>nu <Plug>GenUserName
-imap <C-G>em <Plug>GenEmail
-imap <C-G>id <Plug>GenDomain
-imap <C-G>ip <Plug>GenIPV4
-imap <C-G>ix <Plug>GenIPV6
-imap <C-g>uu <Plug>GenUUID4
-imap <C-g>dt <Plug>GenIso8601DateTime
+imap <C-g>nf <Plug>GenerateFirstName
+imap <C-g>ny <Plug>GenerateFirstMaleName
+imap <C-g>nx <Plug>GenerateFirstFemaleName
+imap <C-g>nl <Plug>GenerateLastName
+imap <C-g>nn <Plug>GenerateFullName
+imap <C-g>ns <Plug>GenerateStubName
+imap <C-g>nu <Plug>GenerateUserName
+imap <C-G>em <Plug>GenerateEmail
+imap <C-G>id <Plug>GenerateDomain
+imap <C-G>ip <Plug>GenerateIPV4
+imap <C-G>ix <Plug>GenerateIPV6
+imap <C-g>uu <Plug>GenerateUUID4
+imap <C-g>dt <Plug>GenerateIso8601DateTime
 
-nnoremap gennf :Gen first name<CR>
-nnoremap genny :Gen first male name<CR>
-nnoremap gennx :Gen first female name<CR>
-nnoremap gennl :Gen last name<CR>
-nnoremap gennn :Gen full name<CR>
-nnoremap genns :Gen stub<CR>
-nnoremap gennu :Gen user<CR>
-nnoremap genem :Gen email<CR>
-nnoremap genid :Gen domain<CR>
-nnoremap genip :Gen ipv4<CR>
-nnoremap genix :Gen ipv6<CR>
-nnoremap genuu :Gen uuid<CR>
-nnoremap gendt :Gen datetime<CR>
+nnoremap gennf :Generate first name<CR>
+nnoremap genny :Generate first male name<CR>
+nnoremap gennx :Generate first female name<CR>
+nnoremap gennl :Generate last name<CR>
+nnoremap gennn :Generate full name<CR>
+nnoremap genns :Generate stub<CR>
+nnoremap gennu :Generate user<CR>
+nnoremap genem :Generate email<CR>
+nnoremap genid :Generate domain<CR>
+nnoremap genip :Generate ipv4<CR>
+nnoremap genix :Generate ipv6<CR>
+nnoremap genuu :Generate uuid<CR>
+nnoremap gendt :Generate datetime<CR>
 ```
 
 Tests

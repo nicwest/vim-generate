@@ -46,25 +46,25 @@ endfunction
 
 
 " Maps: {{{1
-imap <Plug>GenFirstName <C-R>=generate#names#first()<CR>
-imap <Plug>GenFirstMaleName <C-R>=generate#names#first_male()<CR>
-imap <Plug>GenFirstFemaleName <C-R>=generate#names#first_female()<CR>
-imap <Plug>GenLastName <C-R>=generate#names#last()<CR>
-imap <Plug>GenFullName <C-R>=generate#names#full()<CR>
-imap <Plug>GenStubName <C-R>=generate#names#stub()<CR>
-imap <Plug>GenUserName <C-R>=generate#names#user()<CR>
-imap <Plug>GenEmail <C-R>=generate#names#email()<CR>
+imap <Plug>GenerateFirstName <C-R>=generate#names#first()<CR>
+imap <Plug>GenerateFirstMaleName <C-R>=generate#names#first_male()<CR>
+imap <Plug>GenerateFirstFemaleName <C-R>=generate#names#first_female()<CR>
+imap <Plug>GenerateLastName <C-R>=generate#names#last()<CR>
+imap <Plug>GenerateFullName <C-R>=generate#names#full()<CR>
+imap <Plug>GenerateStubName <C-R>=generate#names#stub()<CR>
+imap <Plug>GenerateUserName <C-R>=generate#names#user()<CR>
+imap <Plug>GenerateEmail <C-R>=generate#names#email()<CR>
 
-imap <Plug>GenDomain <C-R>=generate#inet#domain()<CR>
-imap <Plug>GenIPV4 <C-R>=generate#inet#ipv4()<CR>
-imap <Plug>GenIPV6 <C-R>=generate#inet#ipv6()<CR>
+imap <Plug>GenerateDomain <C-R>=generate#inet#domain()<CR>
+imap <Plug>GenerateIPV4 <C-R>=generate#inet#ipv4()<CR>
+imap <Plug>GenerateIPV6 <C-R>=generate#inet#ipv6()<CR>
 
-imap <Plug>GenUUID4 <C-R>=generate#uuid#v4()<CR>
+imap <Plug>GenerateUUID4 <C-R>=generate#uuid#v4()<CR>
 
-imap <Plug>GenIso8601DateTime <C-R>=generate#datetime#iso8601()<CR>
+imap <Plug>GenerateIso8601DateTime <C-R>=generate#datetime#iso8601()<CR>
 
 " Commands: {{{1
-command! -nargs=* -bar Gen call s:generate(<q-args>)
+command! -nargs=* -bar Generate call s:generate(<q-args>)
 
 
 " Teardown: {{{1
