@@ -32,6 +32,8 @@ function! s:generate(t) abort
     let l:thing = generate#uuid#v4()
   elseif a:t == 'datetime'
     let l:thing = generate#datetime#iso8601()
+  elseif a:t == 'sqldatetime'
+    let l:thing = generate#datetime#sql()
   elseif a:t == 'ipv4'
     let l:thing = generate#inet#ipv4()
   elseif a:t == 'ipv6'
@@ -62,6 +64,7 @@ imap <Plug>GenerateIPV6 <C-R>=generate#inet#ipv6()<CR>
 imap <Plug>GenerateUUID4 <C-R>=generate#uuid#v4()<CR>
 
 imap <Plug>GenerateIso8601DateTime <C-R>=generate#datetime#iso8601()<CR>
+imap <Plug>GenerateSQLDateTime <C-R>=generate#datetime#sql()<CR>
 
 " Commands: {{{1
 command! -nargs=* -bar Generate call s:generate(<q-args>)

@@ -22,3 +22,6 @@ function! s:suite.iso8601() abort
   call s:assert.equals(generate#datetime#iso8601(), "2017-08-27T23:09:35+0300")
 endfunction
 
+function! s:suite.sql() abort
+  call s:assert.equals(generate#datetime#sql(), "2017-08-27 23:09:35")
+endfunction

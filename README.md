@@ -33,6 +33,7 @@ Usage
 
 " Dates and Times:
 :Gen datetime             " a ISO8601 Date Time (e.g. 2017-08-27T20:58:00+0100)
+:Gen sqldatetime          " an SQL Date Time (e.g. 2017-08-27 20:58:00)
 
 ```
 
@@ -55,6 +56,7 @@ imap <C-G>ip <Plug>GenerateIPV4
 imap <C-G>ix <Plug>GenerateIPV6
 imap <C-g>uu <Plug>GenerateUUID4
 imap <C-g>dt <Plug>GenerateIso8601DateTime
+imap <C-g>ds <Plug>GenerateSQLDateTime
 
 nnoremap gennf :Generate first name<CR>
 nnoremap genny :Generate first male name<CR>
@@ -69,6 +71,7 @@ nnoremap genip :Generate ipv4<CR>
 nnoremap genix :Generate ipv6<CR>
 nnoremap genuu :Generate uuid<CR>
 nnoremap gendt :Generate datetime<CR>
+nnoremap gends :Generate sqldatetime<CR>
 ```
 
 Tests

@@ -16,6 +16,10 @@ function! generate#datetime#iso8601() abort
   return s:DateTime.now().format('%FT%T%z')
 endfunction
 
+function! generate#datetime#sql() abort
+  return s:DateTime.now().format('%F %T')
+endfunction
+
 " Teardown:{{{1
 let &cpo = s:save_cpo
 
