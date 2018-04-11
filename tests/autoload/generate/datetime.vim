@@ -18,8 +18,12 @@ function! s:suite.after() abort
   let s:datetime.DateTime.now = s:original_now
 endfunction
 
-function! s:suite.iso8601() abort
-  call s:assert.equals(generate#datetime#iso8601(), "2017-08-27T23:09:35+0300")
+function! s:suite.iso8601_date_and_time() abort
+  call s:assert.equals(generate#datetime#iso8601_date_and_time(), "2017-08-27T23:09:35+0300")
+endfunction
+
+function! s:suite.iso8601_date() abort
+  call s:assert.equals(generate#datetime#iso8601_date(), "2017-08-27")
 endfunction
 
 function! s:suite.sql() abort

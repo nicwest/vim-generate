@@ -32,7 +32,8 @@ Usage
 :Gen uuid4                " a UUID v4 (e.g. 13d9f2aa-76b7-4a51-8c89-f755d4e8f470)
 
 " Dates and Times:
-:Gen datetime             " a ISO8601 Date Time (e.g. 2017-08-27T20:58:00+0100)
+:Gen isodatetime          " a ISO8601 Date Time (e.g. 2017-08-27T20:58:00+0100)
+:Gen isodate              " a ISO8601 Date (e.g. 2017-08-27)
 :Gen sqldatetime          " an SQL Date Time (e.g. 2017-08-27 20:58:00)
 
 ```
@@ -56,6 +57,7 @@ imap <C-G>ip <Plug>GenerateIPV4
 imap <C-G>ix <Plug>GenerateIPV6
 imap <C-g>uu <Plug>GenerateUUID4
 imap <C-g>dt <Plug>GenerateIso8601DateTime
+imap <C-g>dd <Plug>GenerateIso8601Date
 imap <C-g>ds <Plug>GenerateSQLDateTime
 
 nnoremap gennf :Generate first name<CR>
@@ -70,7 +72,8 @@ nnoremap genid :Generate domain<CR>
 nnoremap genip :Generate ipv4<CR>
 nnoremap genix :Generate ipv6<CR>
 nnoremap genuu :Generate uuid<CR>
-nnoremap gendt :Generate datetime<CR>
+nnoremap gendt :Generate isodatetime<CR>
+nnoremap gendd :Generate isodate<CR>
 nnoremap gends :Generate sqldatetime<CR>
 ```
 

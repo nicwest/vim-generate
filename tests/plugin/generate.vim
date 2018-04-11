@@ -5,8 +5,8 @@ let s:names = s:scope.vars('autoload/generate/names.vim')
 let s:datetime = s:scope.vars('autoload/generate/datetime.vim')
 
 function! s:fake_now(...) abort
-  let now = s:datetime.DateTime.from_unix_time(1503864575, "+0300")
-  return now
+  let l:now = s:datetime.DateTime.from_unix_time(1503864575, '+0300')
+  return l:now
 endfunction
 
 function! s:suite.before() abort
@@ -97,6 +97,16 @@ function! s:suite.gen_uuid_v4() abort
 endfunction
 
 function! s:suite.gen_iso8601_datetime() abort
-  Generate datetime
+  Generate isodatetime
   call s:assert.equal(getline('.'), '2017-08-27T23:09:35+0300')
+endfunction
+
+function! s:suite.gen_iso8601_date() abort
+  Generate isodate
+  call s:assert.equal(getline('.'), '2017-08-27')
+endfunction
+
+function! s:suite.gen_sql_datetime() abort
+  Generate sqldatetime
+  call s:assert.equal(getline('.'), '2017-08-27 23:09:35')
 endfunction

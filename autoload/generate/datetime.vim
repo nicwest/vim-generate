@@ -12,13 +12,18 @@ function! s:local_function() abort
 endfunction
 
 " Library Interface: {{{1
-function! generate#datetime#iso8601() abort
+function! generate#datetime#iso8601_date_and_time() abort
   return s:DateTime.now().format('%FT%T%z')
+endfunction
+
+function! generate#datetime#iso8601_date() abort
+  return s:DateTime.now().format('%F')
 endfunction
 
 function! generate#datetime#sql() abort
   return s:DateTime.now().format('%F %T')
 endfunction
+
 
 " Teardown:{{{1
 let &cpo = s:save_cpo
