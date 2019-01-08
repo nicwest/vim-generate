@@ -35,7 +35,7 @@ Usage
 :Gen isodatetime          " a ISO8601 Date Time (e.g. 2017-08-27T20:58:00+0100)
 :Gen isodate              " a ISO8601 Date (e.g. 2017-08-27)
 :Gen sqldatetime          " an SQL Date Time (e.g. 2017-08-27 20:58:00)
-
+:Gen unixtime             " number of seconds since 1970-01-01 (e.g. 1546957042)
 ```
 
 Suggested Mappings
@@ -59,6 +59,7 @@ imap <C-g>uu <Plug>GenerateUUID4
 imap <C-g>dt <Plug>GenerateIso8601DateTime
 imap <C-g>dd <Plug>GenerateIso8601Date
 imap <C-g>ds <Plug>GenerateSQLDateTime
+imap <C-g>ut <Plug>GenerateUNIXTime
 
 nnoremap gennf :Generate first name<CR>
 nnoremap genny :Generate first male name<CR>
@@ -75,6 +76,7 @@ nnoremap genuu :Generate uuid<CR>
 nnoremap gendt :Generate isodatetime<CR>
 nnoremap gendd :Generate isodate<CR>
 nnoremap gends :Generate sqldatetime<CR>
+nnoremap genut :Generate unixtime<CR>
 ```
 
 Tests

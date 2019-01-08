@@ -6,9 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.0.6] - 2019-01-08
+### Added
+- UNIX time
+
 ## [0.0.5] - 2018-04-11
 ### Added
-- iso date
+- ISO date
 
 ## [0.0.4] - 2017-09-26
 ### Added
