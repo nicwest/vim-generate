@@ -29,3 +29,7 @@ endfunction
 function! s:suite.sql() abort
   call s:assert.equals(generate#datetime#sql(), "2017-11-27 23:09:35")
 endfunction
+
+function! s:suite.unix() abort
+  call s:assert.equals(generate#datetime#unix(), "1511813375")
+endfunction

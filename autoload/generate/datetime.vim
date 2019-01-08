@@ -24,6 +24,10 @@ function! generate#datetime#sql() abort
   return s:DateTime.now().format('%F %T')
 endfunction
 
+function! generate#datetime#unix() abort
+  return s:DateTime.now().unix_time()
+endfunction
+
 
 " Teardown:{{{1
 let &cpo = s:save_cpo
